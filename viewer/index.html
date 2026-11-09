@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Авад S-0 — 3D-просмотр</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports": {"three": "./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<aside id="panel">
+  <header>
+    <h1>Авад S-0</h1>
+    <p class="sub">Краб-универсал · 3D по модели v2.6 (РД ред. Г)<br><span id="stage">концепция (FEL-1), не рабочий проект</span></p>
+  </header>
+
+  <button id="hidepanel" title="Скрыть панель, чтобы увеличить окна">‹ скрыть панель</button>
+
+  <section>
+    <h2>Что показывать</h2>
+    <p id="verinfo" class="hint"></p>
+    <label class="chk"><input type="checkbox" id="L-skin" checked> Облицовка (декоративная, не по чертежам)</label>
+    <label class="chk"><input type="checkbox" id="L-frame" checked> Каркас: детали по чертежам</label>
+    <label class="chk"><input type="checkbox" id="L-cont" checked> Контейнер на спине</label>
+    <label class="chk"><input type="checkbox" id="L-glow" checked> Свечение линз</label>
+    <label class="chk"><input type="checkbox" id="L-scale" checked> Масштаб: кольца, линейка, куб 100 мм</label>
+    <div class="row"><span>Разнесение деталей</span><input type="range" id="explode" min="0" max="1.6" step="0.02" value="0"></div>
+  </section>
+
+  <section>
+    <h2>Позы</h2>
+    <div class="btns" id="poses"></div>
+    <label class="chk"><input type="checkbox" id="scan" checked> Голова осматривается</label>
+  </section>
+
+  <section>
+    <h2>Ходьба</h2>
+    <button id="walk" class="big">Идти</button>
+    <p class="hint">Клавиши: <b>W / S</b> вперёд и назад · <b>A / D</b> поворот · <b>Q / E</b> боком · <b>Shift</b> быстрее · <b>Пробел</b> стоп</p>
+    <div class="row"><span>Быстрый цикл</span><input type="range" id="T0" min="0.3" max="1.5" step="0.01" value="0.92"><b id="T0v"></b></div>
+    <div class="row"><span>Ход опоры</span><input type="range" id="stroke" min="10" max="45" step="0.5" value="27.5"><b id="strokev"></b></div>
+    <div class="row"><span>Подъём стопы</span><input type="range" id="lift" min="10" max="70" step="1" value="30"><b id="liftv"></b></div>
+    <div class="row"><span>Серво</span><select id="servo"></select><b></b></div>
+    <div id="meters"></div>
+    <p id="status" class="status"></p>
+  </section>
+
+  <section>
+    <h2>Камера</h2>
+    <div class="btns" id="views"></div>
+    <label class="chk"><input type="checkbox" id="spin"> Медленно вращать</label>
+    <button id="shot">Снимок PNG</button>
+  </section>
+
+  <section>
+    <h2>Детали <span id="count"></span></h2>
+    <input id="find" type="search" placeholder="поиск: нога, серво, плита…">
+    <label class="chk"><input type="checkbox" id="iso" checked> Показывать выбранную деталь отдельно</label>
+    <div id="info" class="info">Нажми на деталь на экране или в списке.</div>
+    <div id="tree"></div>
+  </section>
+</aside>
+
+<button id="showpanel" title="Показать панель">›</button>
+
+<div id="hud"><span id="hv"></span></div>
+<div id="legend">Мышь: вращать · колесо: масштаб · правая кнопка: сдвиг · клик: выбрать деталь</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

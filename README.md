@@ -31,6 +31,7 @@
 | `electrical/` | принципиальная и монтажная схемы, адреса серво на шинах, жгуты, размещение электроники |
 | `wrist-tools/` | замок запястья и сменные кисти: захват, паяльная, отвёрточная |
 | `sim/` | модель для симулятора MuJoCo (модель v2.6) и таблица масс и инерций |
+| `viewer/` | 3D-просмотр в браузере: модель v2.6 из 254 деталей, позы, ходьба, разнесение деталей |
 | `media/` | картинки и анимации из симулятора |
 
 **Состав:** 38 приводов — 18 × Feetech STS3250 и 6 × ST3215-HS на ногах, 14 × STS3215 на руках, голове
@@ -39,6 +40,9 @@
 
 ## Как посмотреть
 
+- **3D в браузере** — https://pilot443.github.io/avad-s0/viewer/ : вращать мышью, менять позы, идти клавишами
+  W, A, S, D, разносить детали, выбрать деталь и посмотреть её отдельно. Без интернета — `python viewer/serve.py`,
+  затем http://127.0.0.1:8768/ . Облицовка в просмотре декоративная, размеры — у каркаса по чертежам.
 - **Чертежи** — PDF в любой программе просмотра; DXF — в AutoCAD, КОМПАС, LibreCAD.
 - **3D-модели** — STEP открывается во FreeCAD, Fusion 360, КОМПАС-3D.
 - **Печать** — STL в любом слайсере (PETG; держатели кистей — PA-CF; подошвы — TPU 95A).
@@ -72,7 +76,8 @@
 **Avad S-0** is an open, non-commercial learning prototype of a six-legged walking robot with two arms and
 a swappable cargo box (about 46 cm across, about 7.5 kg, 38 serial-bus servos). **Concept stage: not yet
 built or tested.** The repository holds the full drawing set (69 sheets, revision G), STEP/STL/DXF files,
-bill of materials, assembly instruction, wiring diagrams and a MuJoCo model. The robot has no and will
+bill of materials, assembly instruction, wiring diagrams, a MuJoCo model and a browser 3D viewer
+(https://pilot443.github.io/avad-s0/viewer/). The robot has no and will
 never have weapon functions; a hardware key and an emergency stop cut servo power independently of the
 computer. Long-term goal: robots that take over heavy and dangerous work in mines and construction.
 License: CC BY-NC-SA 4.0 (no commercial use).
