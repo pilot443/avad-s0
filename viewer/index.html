@@ -13,7 +13,7 @@
 <aside id="panel">
   <header>
     <h1>Авад S-0</h1>
-    <p class="sub">Краб-универсал · 3D по модели v2.6 (РД ред. Г)<br><span id="stage">концепция (FEL-1), не рабочий проект</span></p>
+    <p class="sub">Краб-универсал · <span id="vername">3D по модели v2.6 (РД ред. Г, кисть К1 v2 — ред. Д)</span><br><span id="stage">концепция (FEL-1), не рабочий проект</span></p>
   </header>
 
   <button id="hidepanel" title="Скрыть панель, чтобы увеличить окна">‹ скрыть панель</button>
@@ -32,6 +32,7 @@
   <section>
     <h2>Позы</h2>
     <div class="btns" id="poses"></div>
+    <div class="row" id="griprow" style="display:none"><span>Захват</span><input type="range" id="grip" min="0" max="45" step="1" value="0"><b id="gripv"></b></div>
     <label class="chk"><input type="checkbox" id="scan" checked> Голова осматривается</label>
   </section>
 

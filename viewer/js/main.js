@@ -12,7 +12,7 @@ const MM = 0.001;
 const OMEGA0 = 4.72; // рад/с, серво STS3215 без нагрузки [И, данные продавцов]
 // наборы серво по суставам: скорость без нагрузки, рад/с [И: Robotshop, Waveshare, ROBOTIS e-manual]; расчёт — v22/СЕРВО-варианты.md
 const SERVO_SETS = {
-  'Ноги S-0 v2.6: поворот ST3215-HS, бедро и колено STS3250 (12 В)': { yaw: 11.14, hip: 7.87, knee: 7.87 },
+  'Ноги S-0 v2.6: поворот ST3215-HS, бедро и колено STS3250 (12 В)': { yaw: 11.14, hip: 7.87, knee: 7.87 },   // С9, 08.11.2026 [И: Waveshare; servodatabase.com, openelab.io]
   'STS3215 везде (сейчас)': { yaw: 4.72, hip: 4.72, knee: 4.72 },
   'Бедро и колено XM430-W210, поворот STS3215 (12 В)': { yaw: 4.72, hip: 8.06, knee: 8.06 },
   'Поворот HS, бедро и колено XM430-W210 (14,8 В)': { yaw: 11.14, hip: 9.95, knee: 9.95 },
@@ -21,7 +21,7 @@ const SERVO_SETS = {
 const JOINT_NAMES = { yaw: 'поворот бедра', hip: 'подъём бедра', knee: 'колено' };
 const maxRatio = (g) => { const s = SERVO_SETS[document.querySelector('#servo')?.value] ?? SERVO_SETS['STS3215 везде (сейчас)']; return Math.max(...['yaw', 'hip', 'knee'].map((j) => g.peakT[j] / s[j])); };
 
-const VER = new URLSearchParams(location.search).get('v') || 'A';
+const VER = new URLSearchParams(location.search).get('v') || 'A';   // по умолчанию — v2.6 (РД ред. Г, кисть К1 v2 — ред. Д), 09.11.2026
 const SUF = VER === 'A' ? '' : '-' + VER;
 const [data, buf] = await Promise.all([fetch(`data/model${SUF}.json`).then((r) => r.json()), fetch(`data/model${SUF}.bin`).then((r) => r.arrayBuffer())]);
 document.querySelectorAll('#vers a').forEach((a) => a.classList.toggle('on', a.dataset.v === VER));
@@ -103,7 +103,7 @@ for (const p of data.детали) {
   bodies[p.тело].add(mesh); partMeshes.push(mesh); partById[p.ид] = p;
 }
 const boxOf = (p) => { const pt = bodyData[p.тело].точка; return [[0, 1, 2].map((i) => p.габ[0][i] + pt[i]), [0, 1, 2].map((i) => p.габ[1][i] + pt[i])]; };
-document.title = `Авад S-0 — 3D (${data.детали.length} деталей${VER === 'A' ? ', v2.6' : VER === 'V21' ? ', v2.1' : ', вариант ' + VER})`;
+document.title = `Авад S-0 — 3D (${data.детали.length} деталей${VER === 'A' ? ', v2.6' : VER === 'V21' ? ', v2.1' : VER === 'V26' ? ', v2.6, К1 v2' : ', вариант ' + VER})`;
 
 // ------------------------------------------------------------------ облицовка
 const skinHolders = [];
@@ -112,7 +112,9 @@ function addAbs(bodyName, obj, label = '') {
   const holder = new THREE.Group(); const pt = bodyData[bodyName].точка; holder.position.set(-pt[0], -pt[1], -pt[2]);
   holder.add(obj); holder.userData.label = label; bodies[bodyName].add(holder); skinHolders.push(holder); return holder;
 }
-buildSkin(THREE, { Z: data.Z, J: data.J, addAbs, boxOf, parts: partById });
+const hasK1 = data.детали.some((p) => p.ключ === 'кисть_К1_губка');   // кисть-захват К1 v2 (РД ред. Д): губка на своём суставе
+buildSkin(THREE, { Z: data.Z, J: data.J, addAbs, boxOf, parts: partById, k1: hasK1 });
+if ($('#vername') && data.версия) $('#vername').textContent = '3D: ' + data.версия;
 const glowSprites = []; for (const h of skinHolders) h.traverse((o) => { if (o.userData.glow) glowSprites.push(o); });
 
 // ------------------------------------------------------------------ размеры версии, кольца и масштабные метки
@@ -130,6 +132,8 @@ const dims = (() => {
   return { Rmax, zmax, L1, L2 };
 })();
 $('#verinfo').innerHTML = `<b>Круг ног Ø${Math.round(2 * dims.Rmax)} мм</b> · высота ${Math.round(dims.zmax)} мм · бедро ${Math.round(dims.L1)} / голень ${Math.round(dims.L2)} мм · масса деталей ${(data.масса_деталей_г / 1000).toFixed(2)} кг<br>Модель v2.6, РД ред. Г: поворот бедра — ST3215-HS, подъём бедра — два STS3250, колено — STS3250. Серое кольцо — Ø400 для масштаба.`;
+if (VER === 'V26') $('#verinfo').innerHTML = $('#verinfo').innerHTML.replace(/<br><b>Серво ног:<\/b>.*$/, '<br><b>Серво ног:</b> поворот бедра ST3215-HS, подъём бедра — два STS3250, колено — STS3250 (решение С9, 08.11.2026).');
+if (hasK1) $('#verinfo').innerHTML += '<br><b>Кисти:</b> замок и кисть-захват К1 v2 (РД ред. Д): губка-вилка на двух рогах, накладки TPU; ползунок «Захват» в «Позах» раскрывает губки на 0…45°.';
 const scaleGroup = new THREE.Group(); scene.add(scaleGroup);
 const ringGroup = new THREE.Group(); world.add(ringGroup);
 function textSprite(text, size = 0.07, color = '#cfd6e0') {
@@ -251,10 +255,15 @@ let curPose = 'стойка';
 function setPose(name) {
   curPose = name;
   for (const n of Object.keys(tgt)) tgt[n] = data.позы[name]?.[n] ?? 0;
+  const gs = document.querySelector('#grip'); if (gs && joints.armL_grip) for (const n of ['armL_grip', 'armR_grip']) tgt[n] = +gs.value;   // захват К1 — по ползунку
   document.querySelectorAll('#poses button').forEach((b) => b.classList.toggle('on', b.dataset.pose === name));
 }
 for (const name of Object.keys(data.позы)) {
   const b = document.createElement('button'); b.textContent = poseNames[name] ?? name; b.dataset.pose = name; b.onclick = () => { if (walking) setWalking(false); setPose(name); }; $('#poses').appendChild(b);
+}
+if (joints.armL_grip) {   // ползунок захвата: у v2.6 — губка К1 v2, у v2.2 и v2.1 — подвижный палец; раскрытие в пределах сустава (0…45°)
+  const gs = $('#grip'), lim = joints.armL_grip.limits ?? [0, 45]; gs.min = lim[0]; gs.max = lim[1]; $('#griprow').style.display = '';
+  gs.oninput = () => { for (const n of ['armL_grip', 'armR_grip']) if (joints[n]) tgt[n] = +gs.value; $('#gripv').textContent = gs.value + '°'; }; gs.oninput();
 }
 setPose('стойка');
 for (const n of Object.keys(ang)) ang[n] = tgt[n];
@@ -284,6 +293,7 @@ addEventListener('keyup', (e) => { keys[e.code] = false; });
 }
 const servoSel = $('#servo'); for (const k of Object.keys(SERVO_SETS)) { const o = document.createElement('option'); o.textContent = k; servoSel.appendChild(o); }
 servoSel.value = 'Ноги S-0 v2.6: поворот ST3215-HS, бедро и колено STS3250 (12 В)';   // для v2.2 принят набор 8 (30.10.2026)
+if (VER === 'V26') servoSel.value = 'Ноги S-0 v2.6: поворот ST3215-HS, бедро и колено STS3250 (12 В)';
 const meters = {}; for (const j of ['yaw', 'hip', 'knee']) { const d = document.createElement('div'); d.className = 'meter'; d.innerHTML = '<div></div><span></span>'; $('#meters').appendChild(d); meters[j] = d; }
 for (const [id, prop, fmt] of [['T0', 'T0', (v) => v.toFixed(2) + ' с'], ['stroke', 'stroke', (v) => v.toFixed(1) + ' мм'], ['lift', 'lift', (v) => v.toFixed(0) + ' мм']]) {
   const el = $('#' + id), lab = $('#' + id + 'v'); const upd = () => { gait[prop] = +el.value; lab.textContent = fmt(+el.value); }; el.oninput = upd; upd();

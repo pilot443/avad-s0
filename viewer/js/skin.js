@@ -8,7 +8,7 @@
 import { makeKit } from './kit.js';
 
 export function buildSkin(T, ctx) {
-  const { Z, J, addAbs, boxOf, parts } = ctx;
+  const { Z, J, addAbs, boxOf, parts, k1 = false } = ctx;   // k1 — на руках кисть-захват К1 v2 (09.11.2026): клешни облицовки не ставятся
   const rad = (g) => (g * Math.PI) / 180;
   const C = { cream: 0xd9d5c9, teal: 0x3b8d94, orange: 0xe27b1d, black: 0x14161a, steel: 0x2b2f36, slate: 0x7d899b, slateDark: 0x566174, yellow: 0xf2c230 };
   const mats = {};
@@ -162,6 +162,7 @@ export function buildSkin(T, ctx) {
       add(g, new T.CylinderGeometry(21, 21, 46, 28), mBlack(), J.Xw, 127, zs);
     });
     put(`arm${side}4`, (g) => { add(g, shellXZ(66, 42, 50, 12), mOrange(), J.Xw + 36, 127, zs); });
+    if (k1) continue;                // кисть-захват К1 v2 видна сама (настоящие детали РД ред. Д) — клешни облицовки не ставим
     put(`arm${side}5`, (g) => {      // ладонь вокруг серво захвата и неподвижный коготь
       add(g, shellXZ(50, 42, 50, 10), mOrange(), 380, 126, zs);
       const c = add(g, clawGeo(70, 17, 12), mOrange(), 398, 146, zs); c.rotation.x = 0;

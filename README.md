@@ -1,83 +1,77 @@
-# Авад S-0 — учебный шагающий робот
+**English** · [Русский](README.ru.md)
 
-![Ходьба «тройкой» в симуляторе](media/sim-walk-tripod.gif)
+# Avad S-0 — a learning six-legged walking robot
 
-Шестиногий робот с двумя руками и сменным контейнером на спине. **S-0 — первый учебный прототип**:
-около 46 см в поперечнике и около 7,5 кг. На нём проверяются ходьба, перенос груза, работа руками
-и безопасность, прежде чем делать большие версии для тяжёлой и опасной работы — в рудниках, на стройке,
-в мороз и пыль.
+![Tripod gait in the simulator](media/sim-walk-tripod.gif)
 
-> **Стадия: концепция.** Робот ещё не собран и не испытан. Чертежи — редакция Г (предварительная):
-> отверстия под рога и винты серво — допущения до замеров настоящих приводов. Перед резкой металла
-> сначала собирается одна нога на столе.
+A six-legged robot with two arms and a swappable cargo box on its back. **S-0 is the first learning prototype**:
+about 46 cm across and about 7.5 kg. It is used to test walking, carrying loads, working with the arms and
+safety before building larger versions for heavy and dangerous work — in mines, on construction sites,
+in frost and dust.
 
-## Безопасность — без исключений
+> **Stage: concept.** The robot has not been built or tested yet. Drawings — revision G, gripper K1 — revision D
+> (preliminary): holes for servo horns and screws are assumptions until the real servos are measured.
+> Before any metal is cut, a single leg is assembled on the bench first.
 
-- У робота **нет и не будет боевых функций**.
-- Аварийная кнопка и аппаратный ключ разрывают питание приводов **независимо от компьютера**
-  (реле в цепи питания; схема — `electrical/PZ-01_schematic.pdf`).
-- Литиевая батарея — только с защитой, заряд — под присмотром в огнеупорном мешке.
+## Safety — no exceptions
 
-## Что внутри
+- The robot has **no and will never have weapon functions**.
+- An emergency stop button and a hardware key cut servo power **independently of the computer**
+  (a relay in the power circuit; schematic — `electrical/PZ-01_schematic.pdf`).
+- Lithium battery — only with a protection board; charging — supervised, in a fireproof bag.
 
-| Папка | Что |
+## What's inside
+
+Drawings and documents are in Russian (ESKD / GOST style); file names are in Latin letters.
+
+| Folder | Contents |
 |---|---|
-| `docs/drawings-album-rev-G.pdf` | альбом рабочих чертежей: 69 листов деталей, сборок, схем |
-| `docs/assembly-instruction-S0.pdf` | пошаговая инструкция сборки |
-| `docs/bom/` | ведомость закупки (121 позиция, ссылки на Pinduoduo), крепёж и материалы, изготовление |
-| `parts/` | детали: чертёж (PDF, DXF), 3D-модель (STEP), файл печати (STL), раскрой листа для резки (`_cut.dxf`), таблица отверстий (`_holes.csv`) |
-| `assemblies/` | сборочные чертежи: общий вид, корпус, нога, узел бедра, рука, голова, контейнер |
-| `purchased-parts/` | установочные чертежи покупных: серво, Raspberry Pi 5 и Pico, камеры, питание |
-| `electrical/` | принципиальная и монтажная схемы, адреса серво на шинах, жгуты, размещение электроники |
-| `wrist-tools/` | замок запястья и сменные кисти: захват, паяльная, отвёрточная |
-| `sim/` | модель для симулятора MuJoCo (модель v2.6) и таблица масс и инерций |
-| `viewer/` | 3D-просмотр в браузере: модель v2.6 из 254 деталей, позы, ходьба, разнесение деталей |
-| `media/` | картинки и анимации из симулятора |
+| `docs/drawings-album-rev-G.pdf` | working drawing set: 70 sheets of parts, assemblies and diagrams (gripper K1 — revision D) |
+| `docs/assembly-instruction-S0.pdf` | step-by-step assembly instruction; its wrist is the previous revision — assemble the wrist lock and gripper K1 from the sheets in `wrist-tools/assemblies/` |
+| `docs/bom/` | bill of materials (119 items, Pinduoduo links, search queries in Russian, English and Chinese), fasteners and materials, manufacturing |
+| `parts/` | parts: drawing (PDF, DXF), 3D model (STEP), print file (STL), sheet cutting layout (`_cut.dxf`), hole table (`_holes.csv`) |
+| `assemblies/` | assembly drawings: general view, body, leg, hip joint, arm, head, cargo box |
+| `purchased-parts/` | installation drawings of purchased parts: servos, Raspberry Pi 5 and Pico, cameras, power |
+| `electrical/` | schematic and wiring diagrams, servo bus addresses, harnesses, electronics layout |
+| `wrist-tools/` | wrist lock and swappable tools: gripper K1 (fork jaw on two servo horns, TPU pads), soldering tool, screwdriver tool |
+| `sim/` | MuJoCo simulator model (model v2.6 with gripper K1) and a table of masses and inertias |
+| `viewer/` | browser 3D viewer: model v2.6 of 289 parts, poses, walking, gripper, exploded view |
+| `media/` | images and animations from the simulator |
 
-**Состав:** 38 приводов — 18 × Feetech STS3250 и 6 × ST3215-HS на ногах, 14 × STS3215 на руках, голове
-и захватах; Raspberry Pi 5, Raspberry Pi Pico, три камеры Camera Module 3 Wide; батарея Li-ion 4S4P
-около 164 Вт·ч.
+**Components:** 38 servos — 18 × Feetech STS3250 and 6 × ST3215-HS on the legs, 14 × STS3215 on the arms,
+head and grippers; Raspberry Pi 5, Raspberry Pi Pico, three Camera Module 3 Wide cameras; Li-ion 4S4P battery
+of about 164 Wh.
 
-## Как посмотреть
+## How to view
 
-- **3D в браузере** — https://pilot443.github.io/avad-s0/viewer/ : вращать мышью, менять позы, идти клавишами
-  W, A, S, D, разносить детали, выбрать деталь и посмотреть её отдельно. Без интернета — `python viewer/serve.py`,
-  затем http://127.0.0.1:8768/ . Облицовка в просмотре декоративная, размеры — у каркаса по чертежам.
-- **Чертежи** — PDF в любой программе просмотра; DXF — в AutoCAD, КОМПАС, LibreCAD.
-- **3D-модели** — STEP открывается во FreeCAD, Fusion 360, КОМПАС-3D.
-- **Печать** — STL в любом слайсере (PETG; держатели кистей — PA-CF; подошвы — TPU 95A).
-- **Симулятор:** `pip install mujoco`, затем `python -m mujoco.viewer --mjcf=sim/S-0-v26.xml`.
-  Модель стоит и падает без программы управления; программа походки будет опубликована позже.
+- **3D in the browser** — https://pilot443.github.io/avad-s0/viewer/ (interface in Russian): rotate with the mouse,
+  change poses, open the gripper, walk with the W, A, S, D keys, explode the parts, pick a part and view it alone.
+  Offline — `python viewer/serve.py`, then http://127.0.0.1:8768/ . The outer shell in the viewer is decorative;
+  dimensions are those of the frame, per the drawings.
+- **Drawings** — PDF in any viewer; DXF in AutoCAD, KOMPAS, LibreCAD.
+- **3D models** — STEP opens in FreeCAD, Fusion 360, KOMPAS-3D.
+- **Printing** — STL in any slicer (PETG; tool holders — PA-CF; foot soles — TPU 95A).
+- **Simulator:** `pip install mujoco`, then `python -m mujoco.viewer --mjcf=sim/S-0-v26-k1.xml`.
+  The model stands and falls without a control program; the gait program will be published later.
 
-Анимации в `media/` сняты на ранней модели v2.1; чертежи и `sim/` — модель v2.6.
+Animations in `media/` were recorded on the early model v2.1; drawings and `sim/` are model v2.6 with gripper K1.
 
-## Как собирается
+## How it will be built
 
-Закупка идёт тремя волнами: (1) одна нога на столе — замер настоящих серво и правка чертежей до резки
-металла; (2) шесть ног и корпус на проводе от сетевого блока 12 В; (3) компьютер, камеры, батарея,
-руки и кисти. Детали — лазерная резка алюминия 1,5–7 мм, 3D-печать, немного точения.
+Purchasing goes in three waves: (1) one leg on the bench — measure the real servos and correct the drawings
+before cutting metal; (2) six legs and the body, powered by a 12 V mains supply over a cable; (3) computer,
+cameras, battery, arms and tools. Parts — laser-cut aluminium 1.5–7 mm, 3D printing, a little turning.
 
-## Как сделан проект
+## How the project is made
 
-Решения по облику и устройству принимает и собирает робота автор — Иван Ковалёв (Казахстан).
-Расчёты, чертежи и симуляцию по его решениям выполняет ИИ-ассистент на модели Claude.
-Облик — по мотивам шагающих машин из игр серии Horizon; проект с правообладателями игры не связан
-и их материалов не содержит.
+The author, Ivan Kovalev (Kazakhstan), makes the decisions on the look and design and will assemble the robot.
+Calculations, drawings and simulation are done to his decisions by an AI assistant based on the Claude model.
+The gripper K1 layout follows the open SO-101 (TheRobotStudio) and Koch v1.1 (Apache-2.0) arms: a jaw on two
+servo horns, stepped jaws, soft pads. Their files are not included in the repository; K1 parts are drawn
+from scratch. The look is inspired by the walking machines of the Horizon game series; the project is not
+affiliated with the game's rights holders and contains none of their materials.
 
-## Лицензия
+## License
 
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): можно повторять, менять
-и делиться с указанием автора на тех же условиях; **продавать нельзя**. Подробнее — `LICENSE.md`.
-
----
-
-## English summary
-
-**Avad S-0** is an open, non-commercial learning prototype of a six-legged walking robot with two arms and
-a swappable cargo box (about 46 cm across, about 7.5 kg, 38 serial-bus servos). **Concept stage: not yet
-built or tested.** The repository holds the full drawing set (69 sheets, revision G), STEP/STL/DXF files,
-bill of materials, assembly instruction, wiring diagrams, a MuJoCo model and a browser 3D viewer
-(https://pilot443.github.io/avad-s0/viewer/). The robot has no and will
-never have weapon functions; a hardware key and an emergency stop cut servo power independently of the
-computer. Long-term goal: robots that take over heavy and dangerous work in mines and construction.
-License: CC BY-NC-SA 4.0 (no commercial use).
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): you may copy, modify and share it
+with attribution, under the same terms; **commercial use is not allowed**. Details — `LICENSE.md`.
