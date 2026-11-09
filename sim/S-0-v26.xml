@@ -1,0 +1,711 @@
+<mujoco model="avad_s0_v2">
+  <!-- Краб Авад S-0, модель У4-v2.6; сгенерировано инструментом универсал_сим_модель.py (30.10.2026); СИ: м, кг, с. Стадия: концепция, не рабочая документация. -->
+  <compiler angle="radian" inertiafromgeom="false" balanceinertia="true" meshdir="meshes-v26"/>
+  <option timestep="0.001" gravity="0 0 -9.81" integrator="implicitfast"/>
+  <visual>
+    <global offwidth="1280" offheight="720"/>
+    <quality shadowsize="4096"/>
+    <headlight ambient="0.45 0.45 0.47" diffuse="0.55 0.55 0.55" specular="0.1 0.1 0.1"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.62 0.70 0.82" rgb2="0.12 0.14 0.19" width="512" height="512"/>
+    <texture name="grid" type="2d" builtin="checker" rgb1="0.80 0.82 0.84" rgb2="0.70 0.72 0.76" width="512" height="512" mark="edge" markrgb="0.58 0.60 0.64"/>
+    <material name="grid" texture="grid" texrepeat="10 10" reflectance="0.02"/>
+    <mesh name="m000" file="m000.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m001" file="m001.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m002" file="m002.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m003" file="m003.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m004" file="m004.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m005" file="m005.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m006" file="m006.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m007" file="m007.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m008" file="m008.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m009" file="m009.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m010" file="m010.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m011" file="m011.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m012" file="m012.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m013" file="m013.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m014" file="m014.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m015" file="m015.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m016" file="m016.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m017" file="m017.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m018" file="m018.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m019" file="m019.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m020" file="m020.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m021" file="m021.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m022" file="m022.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m023" file="m023.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m024" file="m024.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m025" file="m025.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m026" file="m026.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m027" file="m027.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m028" file="m028.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m029" file="m029.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m030" file="m030.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m031" file="m031.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m032" file="m032.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m033" file="m033.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m034" file="m034.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m035" file="m035.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m036" file="m036.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m037" file="m037.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m038" file="m038.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m039" file="m039.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m040" file="m040.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m041" file="m041.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m042" file="m042.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m043" file="m043.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m044" file="m044.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m045" file="m045.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m046" file="m046.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m047" file="m047.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m048" file="m048.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m049" file="m049.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m050" file="m050.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m051" file="m051.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m052" file="m052.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m053" file="m053.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m054" file="m054.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m055" file="m055.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m056" file="m056.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m057" file="m057.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m058" file="m058.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m059" file="m059.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m060" file="m060.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m061" file="m061.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m062" file="m062.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m063" file="m063.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m064" file="m064.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m065" file="m065.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m066" file="m066.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m067" file="m067.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m068" file="m068.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m069" file="m069.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m070" file="m070.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m071" file="m071.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m072" file="m072.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m073" file="m073.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m074" file="m074.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m075" file="m075.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m076" file="m076.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m077" file="m077.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m078" file="m078.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m079" file="m079.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m080" file="m080.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m081" file="m081.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m082" file="m082.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m083" file="m083.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m084" file="m084.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m085" file="m085.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m086" file="m086.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m087" file="m087.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m088" file="m088.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m089" file="m089.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m090" file="m090.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m091" file="m091.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m092" file="m092.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m093" file="m093.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m094" file="m094.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m095" file="m095.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m096" file="m096.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m097" file="m097.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m098" file="m098.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m099" file="m099.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m100" file="m100.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m101" file="m101.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m102" file="m102.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m103" file="m103.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m104" file="m104.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m105" file="m105.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m106" file="m106.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m107" file="m107.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m108" file="m108.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m109" file="m109.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m110" file="m110.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m111" file="m111.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m112" file="m112.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m113" file="m113.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m114" file="m114.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m115" file="m115.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m116" file="m116.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m117" file="m117.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m118" file="m118.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m119" file="m119.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m120" file="m120.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m121" file="m121.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m122" file="m122.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m123" file="m123.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m124" file="m124.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m125" file="m125.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m126" file="m126.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m127" file="m127.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m128" file="m128.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m129" file="m129.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m130" file="m130.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m131" file="m131.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m132" file="m132.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m133" file="m133.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m134" file="m134.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m135" file="m135.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m136" file="m136.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m137" file="m137.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m138" file="m138.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m139" file="m139.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m140" file="m140.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m141" file="m141.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m142" file="m142.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m143" file="m143.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m144" file="m144.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m145" file="m145.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m146" file="m146.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m147" file="m147.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m148" file="m148.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m149" file="m149.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m150" file="m150.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m151" file="m151.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m152" file="m152.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m153" file="m153.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m154" file="m154.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m155" file="m155.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m156" file="m156.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m157" file="m157.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m158" file="m158.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m159" file="m159.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m160" file="m160.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m161" file="m161.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m162" file="m162.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m163" file="m163.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m164" file="m164.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m165" file="m165.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m166" file="m166.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m167" file="m167.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m168" file="m168.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m169" file="m169.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m170" file="m170.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m171" file="m171.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m172" file="m172.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m173" file="m173.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m174" file="m174.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m175" file="m175.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m176" file="m176.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m177" file="m177.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m178" file="m178.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m179" file="m179.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m180" file="m180.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m181" file="m181.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m182" file="m182.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m183" file="m183.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m184" file="m184.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m185" file="m185.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m186" file="m186.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m187" file="m187.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m188" file="m188.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m189" file="m189.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m190" file="m190.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m191" file="m191.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m192" file="m192.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="m193" file="m193.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+  <default>
+    <joint damping="0.02" frictionloss="0.03" armature="0.005" limited="true"/>
+    <geom contype="0" conaffinity="0" rgba="0.55 0.58 0.62 1"/>
+  </default>
+  <worldbody>
+    <geom name="floor" type="plane" size="5 5 0.1" friction="0.5 0.005 0.0001" contype="1" conaffinity="3" material="grid"/>
+    <light pos="0.5 -1.5 3" dir="-0.1 0.5 -1" diffuse="0.75 0.75 0.75" castshadow="true"/>
+    <body name="trunk" pos="0 0 0">
+      <freejoint name="root"/>
+      <inertial pos="-0.00318207 -0.000247739 0.132633" mass="3.77413" fullinertia="0.040352892 0.040213734 0.030279575 -4.9049761e-05 0.0032699681 2.8380197e-06"/>
+      <geom group="3" name="body_vis" type="cylinder" fromto="0 0 0.088 0 0 0.2" size="0.1039" rgba="0.45 0.5 0.58 1"/>
+      <geom group="3" name="container_vis" type="box" pos="-0.04 2.00655e-13 0.300653" size="0.1 0.1 0.1" rgba="0.75 0.77 0.8 0.6"/>
+      <geom type="mesh" mesh="m000" contype="0" conaffinity="0" group="1" rgba="0.460 0.510 0.590 1.0"/>
+      <geom type="mesh" mesh="m001" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+      <geom type="mesh" mesh="m002" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+      <geom type="mesh" mesh="m003" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+      <geom type="mesh" mesh="m004" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m006" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m021" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m023" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m038" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m040" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m055" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m057" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m072" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m074" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m089" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m091" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m106" contype="0" conaffinity="0" group="1" rgba="0.120 0.620 0.320 1.0"/>
+      <geom type="mesh" mesh="m107" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m108" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m109" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m110" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m111" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m112" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m113" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m114" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m115" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m116" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m117" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m118" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m119" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m120" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m121" contype="0" conaffinity="0" group="1" rgba="0.850 0.100 0.100 1.0"/>
+      <geom type="mesh" mesh="m122" contype="0" conaffinity="0" group="1" rgba="0.850 0.100 0.100 1.0"/>
+      <geom type="mesh" mesh="m123" contype="0" conaffinity="0" group="1" rgba="0.160 0.500 0.300 1.0"/>
+      <geom type="mesh" mesh="m124" contype="0" conaffinity="0" group="1" rgba="0.850 0.100 0.100 1.0"/>
+      <geom type="mesh" mesh="m125" contype="0" conaffinity="0" group="1" rgba="0.850 0.100 0.100 1.0"/>
+      <geom type="mesh" mesh="m126" contype="0" conaffinity="0" group="1" rgba="0.900 0.400 0.100 1.0"/>
+      <geom type="mesh" mesh="m127" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m128" contype="0" conaffinity="0" group="1" rgba="0.200 0.600 0.920 1.0"/>
+      <geom type="mesh" mesh="m132" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m135" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m146" contype="0" conaffinity="0" group="1" rgba="0.960 0.760 0.140 1.0"/>
+      <geom type="mesh" mesh="m147" contype="0" conaffinity="0" group="1" rgba="0.960 0.760 0.140 1.0"/>
+      <geom type="mesh" mesh="m148" contype="0" conaffinity="0" group="1" rgba="0.960 0.760 0.140 1.0"/>
+      <geom type="mesh" mesh="m149" contype="0" conaffinity="0" group="1" rgba="0.960 0.760 0.140 1.0"/>
+      <geom type="mesh" mesh="m150" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m171" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m172" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+      <geom type="mesh" mesh="m193" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+      <geom type="mesh" mesh="m143" contype="0" conaffinity="0" group="1" rgba="0.760 0.780 0.820 0.75"/>
+      <geom type="mesh" mesh="m144" contype="0" conaffinity="0" group="1" rgba="0.760 0.780 0.820 1.0"/>
+      <geom type="mesh" mesh="m145" contype="0" conaffinity="0" group="1" rgba="0.350 0.360 0.400 1.0"/>
+      <body name="head_pan" pos="0.146 0 0.16">
+        <joint name="head_pan" type="hinge" axis="0 0 1" range="-0.36651914 0.36651914"/>
+        <inertial pos="-2.75021e-05 -2.27988e-05 0.0407894" mass="0.0900577" fullinertia="2.1192415e-05 2.6933987e-05 2.3628198e-05 -2.343379e-08 1.7859008e-08 1.4804824e-08"/>
+        <geom type="mesh" mesh="m130" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m133" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m134" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <body name="head_tilt" pos="0 0 0.048">
+          <joint name="head_tilt" type="hinge" axis="0 1 0" range="-0.36651914 0.36651914"/>
+          <inertial pos="0.00996763 0.00323475 0.00365067" mass="0.172534" fullinertia="0.00059204192 0.00019132398 0.0005934826 1.2166967e-05 1.3300918e-05 -4.382802e-05"/>
+          <geom group="3" name="head_vis" type="box" pos="0 0 0" size="0.032 0.09 0.026" rgba="0.3 0.35 0.45 1"/>
+          <geom type="mesh" mesh="m129" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m131" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m136" contype="0" conaffinity="0" group="1" rgba="0.200 0.600 0.920 1.0"/>
+          <geom type="mesh" mesh="m137" contype="0" conaffinity="0" group="1" rgba="0.200 0.600 0.920 1.0"/>
+          <geom type="mesh" mesh="m138" contype="0" conaffinity="0" group="1" rgba="0.300 0.950 0.950 1.0"/>
+          <geom type="mesh" mesh="m139" contype="0" conaffinity="0" group="1" rgba="0.300 0.950 0.950 1.0"/>
+          <geom type="mesh" mesh="m140" contype="0" conaffinity="0" group="1" rgba="0.300 0.950 0.950 1.0"/>
+          <geom type="mesh" mesh="m141" contype="0" conaffinity="0" group="1" rgba="0.080 0.080 0.090 1.0"/>
+          <geom type="mesh" mesh="m142" contype="0" conaffinity="0" group="1" rgba="0.080 0.080 0.090 1.0"/>
+        </body>
+      </body>
+      <body name="leg1_yaw" pos="0.110418 0.06375 0">
+        <joint name="leg1_yaw" type="hinge" axis="0 0 1" range="-0.29670597 0.29670597"/>
+        <inertial pos="-0.00145582 -0.000840518 0.128806" mass="0.202843" fullinertia="0.00011888557 7.7543828e-05 0.00011135481 3.5802998e-05 6.9055236e-07 3.9869059e-07"/>
+        <geom type="mesh" mesh="m005" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m007" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m008" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m010" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="leg1_hip" pos="0 0 0.144">
+          <joint name="leg1_hip" type="hinge" axis="-0.5 0.866 0" range="-0.78539816 0.54105207"/>
+          <inertial pos="0.0494339 0.0185292 -0.0263203" mass="0.14054" fullinertia="0.00010470821 0.00010624729 0.00016610579 -3.6592383e-06 2.4766753e-05 1.9424087e-05"/>
+          <geom group="3" name="leg1_thigh_vis" type="capsule" fromto="0 0 0 0.067117 0.03875 -0.032" size="0.012" rgba="0.6 0.62 0.66 1"/>
+          <geom type="mesh" mesh="m009" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m011" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m012" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m013" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m014" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m015" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="leg1_knee" pos="0.067117 0.03875 -0.032">
+            <joint name="leg1_knee" type="hinge" axis="-0.5 0.866 0" range="-2.6179939 0.76794487"/>
+            <inertial pos="-0.0039626 0.015045 -0.0621338" mass="0.042337" fullinertia="5.1554223e-05 5.0899226e-05 6.0349014e-06 1.6994549e-06 7.2593866e-06 -6.6294988e-06"/>
+            <geom group="3" name="leg1_shin_vis" type="capsule" fromto="0 0 0 0.00519615 0.003 -0.088" size="0.010" rgba="0.6 0.62 0.66 1"/>
+            <geom group="3" name="leg1_pad" type="sphere" pos="0.00519615 0.003 -0.103" size="0.009" friction="0.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
+            <geom type="mesh" mesh="m016" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m017" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m018" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m019" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+            <geom type="mesh" mesh="m020" contype="0" conaffinity="0" group="1" rgba="0.250 0.250 0.280 1.0"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg2_yaw" pos="7.80712e-18 0.1275 0">
+        <joint name="leg2_yaw" type="hinge" axis="0 0 1" range="-0.29670597 0.29670597"/>
+        <inertial pos="9.86814e-17 -0.00168104 0.128806" mass="0.202843" fullinertia="5.6872957e-05 0.00013955644 0.00011135481 3.3610377e-18 -1.9099389e-19 7.9738118e-07"/>
+        <geom type="mesh" mesh="m022" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m024" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m025" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m027" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="leg2_hip" pos="0 0 0.144">
+          <joint name="leg2_hip" type="hinge" axis="-1 6.123e-17 0" range="-1.5358897 0.54105207"/>
+          <inertial pos="1.61131e-05 0.0518993 -0.025682" mass="0.170192" fullinertia="0.00013214954 0.00016758038 0.00024446856 -6.7306053e-08 1.7326044e-08 3.7532361e-05"/>
+          <geom group="3" name="leg2_thigh_vis" type="capsule" fromto="0 0 0 4.74551e-18 0.0775 -0.032" size="0.012" rgba="0.6 0.62 0.66 1"/>
+          <geom type="mesh" mesh="m026" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m028" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m029" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m030" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m031" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m032" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="leg2_knee" pos="4.74551e-18 0.0775 -0.032">
+            <joint name="leg2_knee" type="hinge" axis="-1 6.123e-17 0" range="-2.6179939 0.76794487"/>
+            <inertial pos="-0.0150106 0.00409078 -0.0621338" mass="0.042337" fullinertia="4.9591204e-05 5.2862245e-05 6.0349014e-06 -5.6610546e-07 9.3710077e-06 2.9720638e-06"/>
+            <geom group="3" name="leg2_shin_vis" type="capsule" fromto="0 0 0 3.67394e-19 0.006 -0.088" size="0.010" rgba="0.6 0.62 0.66 1"/>
+            <geom group="3" name="leg2_pad" type="sphere" pos="3.67394e-19 0.006 -0.103" size="0.009" friction="0.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
+            <geom type="mesh" mesh="m033" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m034" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m035" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m036" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+            <geom type="mesh" mesh="m037" contype="0" conaffinity="0" group="1" rgba="0.250 0.250 0.280 1.0"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg3_yaw" pos="-0.110418 0.06375 0">
+        <joint name="leg3_yaw" type="hinge" axis="0 0 1" range="-0.29670597 0.29670597"/>
+        <inertial pos="0.00145582 -0.000840518 0.128806" mass="0.202843" fullinertia="0.00011888557 7.7543828e-05 0.00011135481 -3.5802998e-05 -6.9055236e-07 3.9869059e-07"/>
+        <geom type="mesh" mesh="m039" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m041" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m042" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m044" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="leg3_hip" pos="0 0 0.144">
+          <joint name="leg3_hip" type="hinge" axis="-0.5 -0.866 0" range="-1.2391838 0.54105207"/>
+          <inertial pos="-0.044938 0.0259636 -0.025682" mass="0.170192" fullinertia="0.00015878096 0.00014094896 0.00024446856 -1.530835e-05 -3.2495315e-05 1.8781185e-05"/>
+          <geom group="3" name="leg3_thigh_vis" type="capsule" fromto="0 0 0 -0.067117 0.03875 -0.032" size="0.012" rgba="0.6 0.62 0.66 1"/>
+          <geom type="mesh" mesh="m043" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m045" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m046" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m047" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m048" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m049" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="leg3_knee" pos="-0.067117 0.03875 -0.032">
+            <joint name="leg3_knee" type="hinge" axis="-0.5 -0.866 0" range="-2.6179939 0.76794487"/>
+            <inertial pos="-0.011048 -0.0109542 -0.0621338" mass="0.042337" fullinertia="5.2534747e-05 4.9918703e-05 6.0349014e-06 -1.1333495e-06 2.1116211e-06 9.6015627e-06"/>
+            <geom group="3" name="leg3_shin_vis" type="capsule" fromto="0 0 0 -0.00519615 0.003 -0.088" size="0.010" rgba="0.6 0.62 0.66 1"/>
+            <geom group="3" name="leg3_pad" type="sphere" pos="-0.00519615 0.003 -0.103" size="0.009" friction="0.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
+            <geom type="mesh" mesh="m050" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m051" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m052" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m053" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+            <geom type="mesh" mesh="m054" contype="0" conaffinity="0" group="1" rgba="0.250 0.250 0.280 1.0"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg4_yaw" pos="-0.110418 -0.06375 0">
+        <joint name="leg4_yaw" type="hinge" axis="0 0 1" range="-0.29670597 0.29670597"/>
+        <inertial pos="0.00145582 0.000840518 0.128806" mass="0.202843" fullinertia="0.00011888557 7.7543828e-05 0.00011135481 3.5802998e-05 -6.9055236e-07 -3.9869059e-07"/>
+        <geom type="mesh" mesh="m056" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m058" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m059" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m061" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="leg4_hip" pos="0 0 0.144">
+          <joint name="leg4_hip" type="hinge" axis="0.5 -0.866 0" range="-1.2391838 0.54105207"/>
+          <inertial pos="-0.0449542 -0.0259357 -0.025682" mass="0.170192" fullinertia="0.00015866438 0.00014106554 0.00024446856 1.5375656e-05 -3.2512641e-05 -1.8751175e-05"/>
+          <geom group="3" name="leg4_thigh_vis" type="capsule" fromto="0 0 0 -0.067117 -0.03875 -0.032" size="0.012" rgba="0.6 0.62 0.66 1"/>
+          <geom type="mesh" mesh="m060" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m062" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m063" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m064" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m065" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m066" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="leg4_knee" pos="-0.067117 -0.03875 -0.032">
+            <joint name="leg4_knee" type="hinge" axis="0.5 -0.866 0" range="-2.6179939 0.76794487"/>
+            <inertial pos="0.0039626 -0.015045 -0.0621338" mass="0.042337" fullinertia="5.1554223e-05 5.0899226e-05 6.0349014e-06 1.6994549e-06 -7.2593866e-06 6.6294988e-06"/>
+            <geom group="3" name="leg4_shin_vis" type="capsule" fromto="0 0 0 -0.00519615 -0.003 -0.088" size="0.010" rgba="0.6 0.62 0.66 1"/>
+            <geom group="3" name="leg4_pad" type="sphere" pos="-0.00519615 -0.003 -0.103" size="0.009" friction="0.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
+            <geom type="mesh" mesh="m067" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m068" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m069" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m070" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+            <geom type="mesh" mesh="m071" contype="0" conaffinity="0" group="1" rgba="0.250 0.250 0.280 1.0"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg5_yaw" pos="-2.34214e-17 -0.1275 0">
+        <joint name="leg5_yaw" type="hinge" axis="0 0 1" range="-0.29670597 0.29670597"/>
+        <inertial pos="1.19822e-16 0.00168104 0.128806" mass="0.202843" fullinertia="5.6872957e-05 0.00013955644 0.00011135481 -3.9426595e-18 -2.7557689e-19 -7.9738118e-07"/>
+        <geom type="mesh" mesh="m073" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m075" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m076" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m078" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="leg5_hip" pos="0 0 0.144">
+          <joint name="leg5_hip" type="hinge" axis="1 -1.837e-16 0" range="-1.5358897 0.54105207"/>
+          <inertial pos="-1.61131e-05 -0.0518993 -0.025682" mass="0.170192" fullinertia="0.00013214954 0.00016758038 0.00024446856 -6.7306053e-08 -1.7326044e-08 -3.7532361e-05"/>
+          <geom group="3" name="leg5_thigh_vis" type="capsule" fromto="0 0 0 -1.42365e-17 -0.0775 -0.032" size="0.012" rgba="0.6 0.62 0.66 1"/>
+          <geom type="mesh" mesh="m077" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m079" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m080" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m081" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m082" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m083" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="leg5_knee" pos="-1.42365e-17 -0.0775 -0.032">
+            <joint name="leg5_knee" type="hinge" axis="1 -1.837e-16 0" range="-2.6179939 0.76794487"/>
+            <inertial pos="0.0150106 -0.00409078 -0.0621338" mass="0.042337" fullinertia="4.9591204e-05 5.2862245e-05 6.0349014e-06 -5.6610546e-07 -9.3710077e-06 -2.9720638e-06"/>
+            <geom group="3" name="leg5_shin_vis" type="capsule" fromto="0 0 0 -1.10218e-18 -0.006 -0.088" size="0.010" rgba="0.6 0.62 0.66 1"/>
+            <geom group="3" name="leg5_pad" type="sphere" pos="-1.10218e-18 -0.006 -0.103" size="0.009" friction="0.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
+            <geom type="mesh" mesh="m084" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m085" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m086" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m087" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+            <geom type="mesh" mesh="m088" contype="0" conaffinity="0" group="1" rgba="0.250 0.250 0.280 1.0"/>
+          </body>
+        </body>
+      </body>
+      <body name="leg6_yaw" pos="0.110418 -0.06375 0">
+        <joint name="leg6_yaw" type="hinge" axis="0 0 1" range="-0.29670597 0.29670597"/>
+        <inertial pos="-0.00145582 0.000840518 0.128806" mass="0.202843" fullinertia="0.00011888557 7.7543828e-05 0.00011135481 -3.5802998e-05 6.9055236e-07 -3.9869059e-07"/>
+        <geom type="mesh" mesh="m090" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m092" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m093" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m095" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="leg6_hip" pos="0 0 0.144">
+          <joint name="leg6_hip" type="hinge" axis="0.5 0.866 0" range="-0.78539816 0.54105207"/>
+          <inertial pos="0.0494144 -0.018563 -0.0263203" mass="0.14054" fullinertia="0.00010489512 0.00010615527 0.00016620068 3.6849716e-06 2.4751178e-05 -1.9451065e-05"/>
+          <geom group="3" name="leg6_thigh_vis" type="capsule" fromto="0 0 0 0.067117 -0.03875 -0.032" size="0.012" rgba="0.6 0.62 0.66 1"/>
+          <geom type="mesh" mesh="m094" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m096" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m097" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m098" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m099" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+          <geom type="mesh" mesh="m100" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="leg6_knee" pos="0.067117 -0.03875 -0.032">
+            <joint name="leg6_knee" type="hinge" axis="0.5 0.866 0" range="-2.6179939 0.76794487"/>
+            <inertial pos="0.011048 0.0109542 -0.0621338" mass="0.042337" fullinertia="5.2534747e-05 4.9918703e-05 6.0349014e-06 -1.1333495e-06 -2.1116211e-06 -9.6015627e-06"/>
+            <geom group="3" name="leg6_shin_vis" type="capsule" fromto="0 0 0 0.00519615 -0.003 -0.088" size="0.010" rgba="0.6 0.62 0.66 1"/>
+            <geom group="3" name="leg6_pad" type="sphere" pos="0.00519615 -0.003 -0.103" size="0.009" friction="0.5 0.005 0.0001" contype="1" conaffinity="0" rgba="0.1 0.1 0.1 1"/>
+            <geom type="mesh" mesh="m101" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m102" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m103" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m104" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+            <geom type="mesh" mesh="m105" contype="0" conaffinity="0" group="1" rgba="0.250 0.250 0.280 1.0"/>
+          </body>
+        </body>
+      </body>
+      <body name="armL1" pos="0.111 0.11971 0">
+        <joint name="armL_sh_yaw" type="hinge" axis="0 0 1" range="-0.52359878 2.268928"/>
+        <inertial pos="0.00988674 4.88404e-05 0.178456" mass="0.0661628" fullinertia="1.1036609e-05 1.8725689e-05 2.0947988e-05 1.0016597e-07 -2.0867373e-06 6.6289465e-08"/>
+        <geom type="mesh" mesh="m151" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m152" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m153" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="armL2" pos="0 0 0.1802">
+          <joint name="armL_sh_pitch" type="hinge" axis="0 1 0" range="-2.7925268 0.52359878"/>
+          <inertial pos="0.0745416 0.00892964 -0.00902399" mass="0.0887521" fullinertia="2.890074e-05 8.7368458e-05 8.6913285e-05 1.7841993e-05 1.2388401e-05 -4.1187971e-06"/>
+          <geom group="3" name="armL2_vis" type="capsule" fromto="0 0 0 0.09 0 0" size="0.011" rgba="0.62 0.64 0.68 1"/>
+          <geom type="mesh" mesh="m154" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m155" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m156" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m157" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="armL3" pos="0.09 0 0">
+            <joint name="armL_elbow" type="hinge" axis="0 1 0" range="-2.443461 2.443461"/>
+            <inertial pos="0.0835937 -0.00588404 0.00899469" mass="0.0890413" fullinertia="2.6632526e-05 9.8563885e-05 9.5724672e-05 -1.5903131e-05 -1.3147572e-05 -3.2813837e-06"/>
+            <geom group="3" name="armL3_vis" type="capsule" fromto="0 0 0 0.1 0 0" size="0.011" rgba="0.62 0.64 0.68 1"/>
+            <geom type="mesh" mesh="m158" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m159" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m160" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m161" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <body name="armL4" pos="0.1 0 0">
+              <joint name="armL_wr_tilt" type="hinge" axis="0 1 0" range="-1.7453293 1.7453293"/>
+              <inertial pos="0.0388853 0.0100671 -0.0112116" mass="0.0748801" fullinertia="1.8068563e-05 2.9636479e-05 2.1929526e-05 2.5839393e-06 3.0514786e-06 -9.0940786e-07"/>
+              <geom group="3" name="armL4_vis" type="capsule" fromto="0 0 0 0.13 0.00714 0" size="0.011" rgba="0.62 0.64 0.68 1"/>
+              <geom type="mesh" mesh="m162" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+              <geom type="mesh" mesh="m163" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+              <geom type="mesh" mesh="m164" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+              <body name="armL5" pos="0 0.00714 0">
+                <joint name="armL_wr_roll" type="hinge" axis="1 0 0" range="-2.6179939 2.6179939"/>
+                <inertial pos="0.0757683 0.00128686 -0.0109626" mass="0.0724739" fullinertia="2.2169388e-05 2.0871322e-05 1.6750732e-05 -1.5525645e-06 -9.6802587e-08 -9.0060513e-07"/>
+                <geom group="3" name="armL5_vis" type="sphere" pos="0.13 0 0" size="0.013" rgba="0.2 0.2 0.25 1"/>
+                <site name="armL_hand" pos="0.13 0 0" size="0.003"/>
+                <geom type="mesh" mesh="m165" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+                <geom type="mesh" mesh="m166" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+                <geom type="mesh" mesh="m167" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+                <geom type="mesh" mesh="m170" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+                <body name="gripL" pos="0.07686 0.0185 0">
+                  <joint name="armL_grip" type="hinge" axis="0 1 0" range="0 0.78539816"/>
+                  <inertial pos="0.0134662 0.00111892 0" mass="0.00567486" fullinertia="9.0615628e-08 1.7844703e-06 1.7088271e-06 -6.7331059e-08 4.1302815e-20 2.1078416e-20"/>
+                  <geom type="mesh" mesh="m168" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+                  <geom type="mesh" mesh="m169" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="armR1" pos="0.111 -0.11971 0">
+        <joint name="armR_sh_yaw" type="hinge" axis="0 0 -1" range="-0.52359878 2.268928"/>
+        <inertial pos="0.00988674 -4.88404e-05 0.178456" mass="0.0661628" fullinertia="1.1036609e-05 1.8725689e-05 2.0947988e-05 -1.0016597e-07 -2.0867373e-06 -6.6289465e-08"/>
+        <geom type="mesh" mesh="m173" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <geom type="mesh" mesh="m174" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+        <geom type="mesh" mesh="m175" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+        <body name="armR2" pos="0 0 0.1802">
+          <joint name="armR_sh_pitch" type="hinge" axis="0 1 0" range="-2.7925268 0.52359878"/>
+          <inertial pos="0.0745416 -0.00892964 -0.00902399" mass="0.0887521" fullinertia="2.890074e-05 8.7368458e-05 8.6913285e-05 -1.7841993e-05 1.2388401e-05 4.1187971e-06"/>
+          <geom group="3" name="armR2_vis" type="capsule" fromto="0 0 0 0.09 0 0" size="0.011" rgba="0.62 0.64 0.68 1"/>
+          <geom type="mesh" mesh="m176" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <geom type="mesh" mesh="m177" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m178" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+          <geom type="mesh" mesh="m179" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+          <body name="armR3" pos="0.09 0 0">
+            <joint name="armR_elbow" type="hinge" axis="0 1 0" range="-2.443461 2.443461"/>
+            <inertial pos="0.0835937 0.00588404 0.00899469" mass="0.0890413" fullinertia="2.6632526e-05 9.8563885e-05 9.5724672e-05 1.5903131e-05 -1.3147572e-05 3.2813837e-06"/>
+            <geom group="3" name="armR3_vis" type="capsule" fromto="0 0 0 0.1 0 0" size="0.011" rgba="0.62 0.64 0.68 1"/>
+            <geom type="mesh" mesh="m180" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <geom type="mesh" mesh="m181" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m182" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+            <geom type="mesh" mesh="m183" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+            <body name="armR4" pos="0.1 0 0">
+              <joint name="armR_wr_tilt" type="hinge" axis="0 1 0" range="-1.7453293 1.7453293"/>
+              <inertial pos="0.0388853 -0.0100671 -0.0112116" mass="0.0748801" fullinertia="1.8068563e-05 2.9636479e-05 2.1929526e-05 -2.5839393e-06 3.0514786e-06 9.0940786e-07"/>
+              <geom group="3" name="armR4_vis" type="capsule" fromto="0 0 0 0.13 -0.00714 0" size="0.011" rgba="0.62 0.64 0.68 1"/>
+              <geom type="mesh" mesh="m184" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+              <geom type="mesh" mesh="m185" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+              <geom type="mesh" mesh="m186" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+              <body name="armR5" pos="0 -0.00714 0">
+                <joint name="armR_wr_roll" type="hinge" axis="-1 0 0" range="-2.6179939 2.6179939"/>
+                <inertial pos="0.0757683 -0.00128686 -0.0109626" mass="0.0724739" fullinertia="2.2169388e-05 2.0871322e-05 1.6750732e-05 1.5525645e-06 -9.6802587e-08 9.0060513e-07"/>
+                <geom group="3" name="armR5_vis" type="sphere" pos="0.13 0 0" size="0.013" rgba="0.2 0.2 0.25 1"/>
+                <site name="armR_hand" pos="0.13 0 0" size="0.003"/>
+                <geom type="mesh" mesh="m187" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+                <geom type="mesh" mesh="m188" contype="0" conaffinity="0" group="1" rgba="0.340 0.380 0.460 1.0"/>
+                <geom type="mesh" mesh="m189" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+                <geom type="mesh" mesh="m192" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+                <body name="gripR" pos="0.07686 -0.0185 0">
+                  <joint name="armR_grip" type="hinge" axis="0 1 0" range="0 0.78539816"/>
+                  <inertial pos="0.0134662 -0.00111892 0" mass="0.00567486" fullinertia="9.0615628e-08 1.7844703e-06 1.7088271e-06 6.7331059e-08 4.1302815e-20 -2.1562712e-20"/>
+                  <geom type="mesh" mesh="m190" contype="0" conaffinity="0" group="1" rgba="0.100 0.110 0.130 1.0"/>
+                  <geom type="mesh" mesh="m191" contype="0" conaffinity="0" group="1" rgba="0.820 0.840 0.880 1.0"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="head_pan" joint="head_pan" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="head_tilt" joint="head_tilt" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg1_yaw" joint="leg1_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg1_hip" joint="leg1_hip" gear="1" ctrllimited="true" ctrlrange="-5.88 5.88"/>
+    <motor name="leg1_knee" joint="leg1_knee" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg2_yaw" joint="leg2_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg2_hip" joint="leg2_hip" gear="1" ctrllimited="true" ctrlrange="-5.88 5.88"/>
+    <motor name="leg2_knee" joint="leg2_knee" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg3_yaw" joint="leg3_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg3_hip" joint="leg3_hip" gear="1" ctrllimited="true" ctrlrange="-5.88 5.88"/>
+    <motor name="leg3_knee" joint="leg3_knee" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg4_yaw" joint="leg4_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg4_hip" joint="leg4_hip" gear="1" ctrllimited="true" ctrlrange="-5.88 5.88"/>
+    <motor name="leg4_knee" joint="leg4_knee" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg5_yaw" joint="leg5_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg5_hip" joint="leg5_hip" gear="1" ctrllimited="true" ctrlrange="-5.88 5.88"/>
+    <motor name="leg5_knee" joint="leg5_knee" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg6_yaw" joint="leg6_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="leg6_hip" joint="leg6_hip" gear="1" ctrllimited="true" ctrlrange="-5.88 5.88"/>
+    <motor name="leg6_knee" joint="leg6_knee" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armL_sh_yaw" joint="armL_sh_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armL_sh_pitch" joint="armL_sh_pitch" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armL_elbow" joint="armL_elbow" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armL_wr_tilt" joint="armL_wr_tilt" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armL_wr_roll" joint="armL_wr_roll" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armL_grip" joint="armL_grip" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armR_sh_yaw" joint="armR_sh_yaw" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armR_sh_pitch" joint="armR_sh_pitch" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armR_elbow" joint="armR_elbow" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armR_wr_tilt" joint="armR_wr_tilt" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armR_wr_roll" joint="armR_wr_roll" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+    <motor name="armR_grip" joint="armR_grip" gear="1" ctrllimited="true" ctrlrange="-2.94 2.94"/>
+  </actuator>
+  <sensor>
+    <jointpos name="head_pan_q" joint="head_pan"/>
+    <jointvel name="head_pan_dq" joint="head_pan"/>
+    <actuatorfrc name="head_pan_tau" actuator="head_pan"/>
+    <jointpos name="head_tilt_q" joint="head_tilt"/>
+    <jointvel name="head_tilt_dq" joint="head_tilt"/>
+    <actuatorfrc name="head_tilt_tau" actuator="head_tilt"/>
+    <jointpos name="leg1_yaw_q" joint="leg1_yaw"/>
+    <jointvel name="leg1_yaw_dq" joint="leg1_yaw"/>
+    <actuatorfrc name="leg1_yaw_tau" actuator="leg1_yaw"/>
+    <jointpos name="leg1_hip_q" joint="leg1_hip"/>
+    <jointvel name="leg1_hip_dq" joint="leg1_hip"/>
+    <actuatorfrc name="leg1_hip_tau" actuator="leg1_hip"/>
+    <jointpos name="leg1_knee_q" joint="leg1_knee"/>
+    <jointvel name="leg1_knee_dq" joint="leg1_knee"/>
+    <actuatorfrc name="leg1_knee_tau" actuator="leg1_knee"/>
+    <jointpos name="leg2_yaw_q" joint="leg2_yaw"/>
+    <jointvel name="leg2_yaw_dq" joint="leg2_yaw"/>
+    <actuatorfrc name="leg2_yaw_tau" actuator="leg2_yaw"/>
+    <jointpos name="leg2_hip_q" joint="leg2_hip"/>
+    <jointvel name="leg2_hip_dq" joint="leg2_hip"/>
+    <actuatorfrc name="leg2_hip_tau" actuator="leg2_hip"/>
+    <jointpos name="leg2_knee_q" joint="leg2_knee"/>
+    <jointvel name="leg2_knee_dq" joint="leg2_knee"/>
+    <actuatorfrc name="leg2_knee_tau" actuator="leg2_knee"/>
+    <jointpos name="leg3_yaw_q" joint="leg3_yaw"/>
+    <jointvel name="leg3_yaw_dq" joint="leg3_yaw"/>
+    <actuatorfrc name="leg3_yaw_tau" actuator="leg3_yaw"/>
+    <jointpos name="leg3_hip_q" joint="leg3_hip"/>
+    <jointvel name="leg3_hip_dq" joint="leg3_hip"/>
+    <actuatorfrc name="leg3_hip_tau" actuator="leg3_hip"/>
+    <jointpos name="leg3_knee_q" joint="leg3_knee"/>
+    <jointvel name="leg3_knee_dq" joint="leg3_knee"/>
+    <actuatorfrc name="leg3_knee_tau" actuator="leg3_knee"/>
+    <jointpos name="leg4_yaw_q" joint="leg4_yaw"/>
+    <jointvel name="leg4_yaw_dq" joint="leg4_yaw"/>
+    <actuatorfrc name="leg4_yaw_tau" actuator="leg4_yaw"/>
+    <jointpos name="leg4_hip_q" joint="leg4_hip"/>
+    <jointvel name="leg4_hip_dq" joint="leg4_hip"/>
+    <actuatorfrc name="leg4_hip_tau" actuator="leg4_hip"/>
+    <jointpos name="leg4_knee_q" joint="leg4_knee"/>
+    <jointvel name="leg4_knee_dq" joint="leg4_knee"/>
+    <actuatorfrc name="leg4_knee_tau" actuator="leg4_knee"/>
+    <jointpos name="leg5_yaw_q" joint="leg5_yaw"/>
+    <jointvel name="leg5_yaw_dq" joint="leg5_yaw"/>
+    <actuatorfrc name="leg5_yaw_tau" actuator="leg5_yaw"/>
+    <jointpos name="leg5_hip_q" joint="leg5_hip"/>
+    <jointvel name="leg5_hip_dq" joint="leg5_hip"/>
+    <actuatorfrc name="leg5_hip_tau" actuator="leg5_hip"/>
+    <jointpos name="leg5_knee_q" joint="leg5_knee"/>
+    <jointvel name="leg5_knee_dq" joint="leg5_knee"/>
+    <actuatorfrc name="leg5_knee_tau" actuator="leg5_knee"/>
+    <jointpos name="leg6_yaw_q" joint="leg6_yaw"/>
+    <jointvel name="leg6_yaw_dq" joint="leg6_yaw"/>
+    <actuatorfrc name="leg6_yaw_tau" actuator="leg6_yaw"/>
+    <jointpos name="leg6_hip_q" joint="leg6_hip"/>
+    <jointvel name="leg6_hip_dq" joint="leg6_hip"/>
+    <actuatorfrc name="leg6_hip_tau" actuator="leg6_hip"/>
+    <jointpos name="leg6_knee_q" joint="leg6_knee"/>
+    <jointvel name="leg6_knee_dq" joint="leg6_knee"/>
+    <actuatorfrc name="leg6_knee_tau" actuator="leg6_knee"/>
+    <jointpos name="armL_sh_yaw_q" joint="armL_sh_yaw"/>
+    <jointvel name="armL_sh_yaw_dq" joint="armL_sh_yaw"/>
+    <actuatorfrc name="armL_sh_yaw_tau" actuator="armL_sh_yaw"/>
+    <jointpos name="armL_sh_pitch_q" joint="armL_sh_pitch"/>
+    <jointvel name="armL_sh_pitch_dq" joint="armL_sh_pitch"/>
+    <actuatorfrc name="armL_sh_pitch_tau" actuator="armL_sh_pitch"/>
+    <jointpos name="armL_elbow_q" joint="armL_elbow"/>
+    <jointvel name="armL_elbow_dq" joint="armL_elbow"/>
+    <actuatorfrc name="armL_elbow_tau" actuator="armL_elbow"/>
+    <jointpos name="armL_wr_tilt_q" joint="armL_wr_tilt"/>
+    <jointvel name="armL_wr_tilt_dq" joint="armL_wr_tilt"/>
+    <actuatorfrc name="armL_wr_tilt_tau" actuator="armL_wr_tilt"/>
+    <jointpos name="armL_wr_roll_q" joint="armL_wr_roll"/>
+    <jointvel name="armL_wr_roll_dq" joint="armL_wr_roll"/>
+    <actuatorfrc name="armL_wr_roll_tau" actuator="armL_wr_roll"/>
+    <jointpos name="armL_grip_q" joint="armL_grip"/>
+    <jointvel name="armL_grip_dq" joint="armL_grip"/>
+    <actuatorfrc name="armL_grip_tau" actuator="armL_grip"/>
+    <jointpos name="armR_sh_yaw_q" joint="armR_sh_yaw"/>
+    <jointvel name="armR_sh_yaw_dq" joint="armR_sh_yaw"/>
+    <actuatorfrc name="armR_sh_yaw_tau" actuator="armR_sh_yaw"/>
+    <jointpos name="armR_sh_pitch_q" joint="armR_sh_pitch"/>
+    <jointvel name="armR_sh_pitch_dq" joint="armR_sh_pitch"/>
+    <actuatorfrc name="armR_sh_pitch_tau" actuator="armR_sh_pitch"/>
+    <jointpos name="armR_elbow_q" joint="armR_elbow"/>
+    <jointvel name="armR_elbow_dq" joint="armR_elbow"/>
+    <actuatorfrc name="armR_elbow_tau" actuator="armR_elbow"/>
+    <jointpos name="armR_wr_tilt_q" joint="armR_wr_tilt"/>
+    <jointvel name="armR_wr_tilt_dq" joint="armR_wr_tilt"/>
+    <actuatorfrc name="armR_wr_tilt_tau" actuator="armR_wr_tilt"/>
+    <jointpos name="armR_wr_roll_q" joint="armR_wr_roll"/>
+    <jointvel name="armR_wr_roll_dq" joint="armR_wr_roll"/>
+    <actuatorfrc name="armR_wr_roll_tau" actuator="armR_wr_roll"/>
+    <jointpos name="armR_grip_q" joint="armR_grip"/>
+    <jointvel name="armR_grip_dq" joint="armR_grip"/>
+    <actuatorfrc name="armR_grip_tau" actuator="armR_grip"/>
+    <framepos name="trunk_pos" objtype="body" objname="trunk"/>
+    <framequat name="trunk_quat" objtype="body" objname="trunk"/>
+  </sensor>
+  <keyframe>
+    <key name="stoika" qpos="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.5708 -1.52084 -0.69346 0 0 0 -1.5708 -1.52084 -0.69346 0 0"/>
+  </keyframe>
+</mujoco>
